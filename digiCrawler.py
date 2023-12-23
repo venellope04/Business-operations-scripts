@@ -6,8 +6,8 @@ from email.mime.text import MIMEText
 
 # Function to fetch search results from Google API
 def fetch_google_results(query):
-    google_api_key = 'AIzaSyAnlkwEZq2Ut_lFNSeshyRStrLpvEZb0kU'  # Replace with your Google API key
-    google_search_engine_id = '71ea9a1b1dd854cc3'  # Replace with your Google Search Engine ID
+    google_api_key = 'AIzaSyAnlkwEZq2Ut_lFNSeshyRStrLpvEZb0kU'  
+    google_search_engine_id = '71ea9a1b1dd854cc3'  
     google_url = f"https://www.googleapis.com/customsearch/v1?key={google_api_key}&cx={google_search_engine_id}&q={query}"
 
     response = requests.get(google_url)
@@ -18,8 +18,8 @@ def fetch_google_results(query):
 
 # Function to send emails
 def send_emails(email_addresses, subject, body):
-    sender_email = 'dishasarvaiya4@gmail.com'
-    password = 'disha2134'
+    sender_email = 'misaamane573@gmail.com'
+    password = 'exfx rkzi uaoc wgyk'
 
     for receiver_email in email_addresses:
         message = MIMEMultipart()
@@ -28,7 +28,7 @@ def send_emails(email_addresses, subject, body):
         message['Subject'] = subject
         message.attach(MIMEText(body, 'plain'))
 
-        with smtplib.SMTP('smtp.example.com', 587) as server:
+        with smtplib.SMTP('smtp.gmail.com', 587) as server:
             server.starttls()
             server.login(sender_email, password)
             server.send_message(message)
@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
         # Read email addresses from a CSV file
         email_addresses = []
-        with open('email_list.csv', newline='') as csvfile:
+        with open('Email_list.csv', newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 email_addresses.append(row['email'])
