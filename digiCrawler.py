@@ -56,7 +56,7 @@ class GoogleSearchApp(QWidget):
 
         self.setLayout(layout)
 
-        self.setWindowTitle('Google Search and Email')
+        self.setWindowTitle('DigiCrawler')
         self.setGeometry(300, 300, 500, 400)
 
         # Set dark gray theme
